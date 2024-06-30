@@ -1,0 +1,7 @@
+<div class="w-9 h-9 flex justify-center items-center rounded-full hover:cursor-pointer hover:shadow-2xl" [matTooltip]="tooltipText()" [matTooltipPosition]="tooltipPosition()">
+    @if (iconName() === 'status') {
+        <div [ngClass]="['h-6', 'w-6', 'border', 'rounded-full', item()?.status === 1 ? 'bg-gray-400' : item()?.status === 2 ? 'bg-green-400' : item()?.status === 3 ? 'bg-red-400' : '']"></div>
+    } @else {
+        <mat-icon [ngClass]="[item()?.isFavorite ? 'text-red-400' : 'text-gray-200']">{{ iconName() }}</mat-icon>
+    }
+</div>

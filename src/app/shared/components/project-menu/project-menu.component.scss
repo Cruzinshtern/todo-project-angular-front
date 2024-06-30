@@ -1,0 +1,37 @@
+.menu {
+    height: 100vh;
+    border: 1px solid black;
+    transition: all 1s ease-out;
+    padding: 16px;
+
+    &-opened {
+        width: 200px;
+    }    
+    &-closed {
+        width: 60px;
+    }
+}
+
+.show {
+    opacity: 1;
+    transition: opacity 0.5s ease-in;
+    
+    &:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
+.hide {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
+    pointer-events: none;
+}
+
+.icon {
+    transform: scale(1.5);
+    
+    &:hover {
+        transform: scale(1.7);
+    }
+}

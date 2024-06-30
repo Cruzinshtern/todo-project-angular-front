@@ -1,0 +1,30 @@
+@use '../../../../assets/styles/variables.scss' as *;
+
+.button {
+    border-radius: $border-radius;
+    border: none;
+    padding: 12px 24px;
+    margin: 8px;
+    font-size: $default-font-size;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.color {
+    &-primary {
+        background-color: $primary-background-color;
+    }
+    &-secondary {
+        background-color: $secondary-background-color;
+        color: $white;
+    }
+    &-tertiary {
+        background-color: $tertiary-background-color;
+    }
+    &-default {
+        background-color: $default-background-color;
+        border: 1px solid $black;
+    }
+}

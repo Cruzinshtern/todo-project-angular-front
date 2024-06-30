@@ -1,0 +1,18 @@
+<div class="flex flex-col">
+    <form class="p-3 m-3" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <project-input [placeholder]="'auth.firstNamePlaceholder' | translate" [type]="'text'" [label]="'auth.firstName' | translate" [_formControl_]="form.controls['firstName']"></project-input>
+        <project-input [placeholder]="'auth.lastNamePlaceholder' | translate" [type]="'text'" [label]="'auth.lastName' | translate" [_formControl_]="form.controls['lastName']"></project-input>
+        <project-input [placeholder]="'auth.emailPlaceholder' | translate" [type]="'email'" [label]="'auth.email' | translate" [_formControl_]="form.controls['email']"></project-input>
+        <project-input [placeholder]="'auth.passwordPlaceholder' | translate" [type]="'password'" [label]="'auth.password' | translate" [_formControl_]="form.controls['password']"></project-input>
+    
+        <div class="flex justify-center">
+            <project-button type="submit" color="primary">{{ 'auth.login' | translate }}</project-button>
+            <project-button type="button" color="secondary">{{ 'auth.cancel' | translate }}</project-button>
+        </div>
+    </form>
+
+    <div class="text-center">{{ 'auth.haveAccount' | translate }} <a class="hover:cursor-pointer" (click)="handleNavigation()">{{ 'auth.login' | translate }}</a></div>
+</div>
+
+
+

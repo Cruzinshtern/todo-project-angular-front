@@ -1,0 +1,19 @@
+@use '../../../../assets/styles/variables.scss' as *;
+
+div {
+    input {
+        padding: $small-padding $default-padding;
+        margin: $small-margin 0;
+        background-color: $input-background !important;
+        &:focus {
+            border: none !important;
+        }
+    }
+    label {
+        padding: 0 $default-padding;
+    }
+}
+small {
+    color: $error-color;
+    padding: 0 $default-padding;
+}

@@ -1,0 +1,59 @@
+{
+    "general": {
+        "close": "Закрыть",
+        "welcome": "Добро пожаловать в Todo Project app",
+        "create": "Создать",
+        "reset": "Очистить",
+        "delete": "Удалить",
+        "edit": "Редактировать"
+    },
+    "auth": {
+        "email": "Электронная почта",
+        "emailPlaceholder": "Введите вашу электронную почту здесь",
+        "password": "Пароль",
+        "passwordPlaceholder": "Введите ваш пароль здесь",
+        "firstName": "Имя",
+        "firstNamePlaceholder": "Введите ваше имя здесь",
+        "lastName": "Фамилия",
+        "lastNamePlaceholder": "Введите вашу фамилию здесь",
+        "register": "Регистрация",
+        "login": "Логин",
+        "cancel": "Отмена",
+        "noAccount": "У Вас еще нет аккаунта?",
+        "haveAccount": "У Вас уже есть аккаунт?",
+        "validEmailError": "Это должен быть валидний адрес электронной почты",
+        "requiredFieldError": "Это поле обязательное",
+        "minlengthError": "Длина должна составлять как минимум {{value}} символов",
+        "maxlengthError": "Длина должна составлять не более {{value}} символов",
+        "passwordPatternError": "Ваш пароль должен содержать буквы верхнего и нижнего регистра и как минимум один специальный символ"
+    },
+    "todos": {
+        "creationDate": "Дата создания",
+        "favorite": "Любимые",
+        "status": "Статус",
+        "todo": "Необходимо сделать",
+        "active": "В процессе",
+        "done": "Сделано",
+        "title": "Название",
+        "description": "Описание",
+        "noDescription": "Нет описания",
+        "isFavorite": "В списке любимых",
+        "dueToDate": "Необходимо выполнить до",
+        "startDate": "Дата начала выполнения"
+    },
+    "tabs": {
+        "board": "Доска",
+        "list": "Список",
+        "table": "Таблица",
+        "tiles": "Палитра"
+    },
+    "dialog": {
+        "edit": "Редактировать",
+        "delete": "Удалить",
+        "deleteModal": {
+            "title": "Удалить",
+            "text": "Вы уверены, что хотите удалить эту задачу?",
+            "confirmBtnText": "Удалить"
+        }
+    }
+}

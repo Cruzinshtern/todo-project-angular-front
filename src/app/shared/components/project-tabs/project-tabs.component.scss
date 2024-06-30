@@ -1,0 +1,13 @@
+@import url("https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined");
+
+.tab:hover {
+    background-color: rgb(228, 228, 228);
+}
+
+.selected {
+    background-color: rgb(199, 199, 199) !important;
+}
+
+mat-icon {
+    transform: scale(1.2);
+}

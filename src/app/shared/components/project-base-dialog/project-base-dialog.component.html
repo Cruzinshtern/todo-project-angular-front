@@ -1,0 +1,6 @@
+@if (dialogType === 'edit') {
+    <project-edit-dialog [title]="title" [confirmBtnText]="confirmBtnText" [todoData]="todoData" (dialogAction)="handleDialogAction($event)"></project-edit-dialog>   
+}
+@if (dialogType === 'delete') {
+    <project-delete-dialog [title]="title" [text]="text" [confirmBtnText]="confirmBtnText" (dialogAction)="handleDialogAction($event)"></project-delete-dialog>
+}

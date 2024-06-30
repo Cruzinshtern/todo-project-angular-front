@@ -1,0 +1,27 @@
+<div [ngClass]="['flex', 'flex-col', 'justify-between', 'menu', isOpened ? 'menu-opened' : 'menu-closed']">
+    @if (isOpened) {
+        <button type="button" class="flex gap-4 ml-auto" (click)="toggleOpen()">
+            <mat-icon class="icon">{{ reduceMenuItem.key }}</mat-icon>
+        </button>
+    } @else {
+        <button type="button" class="flex gap-4" (click)="toggleOpen()">
+            <mat-icon class="icon">{{ expandMenuItem.key }}</mat-icon>
+        </button>
+    }
+
+    <div class="flex flex-col gap-5 w-28">
+        @for (item of commonMenuItems; track $index) {
+            <button type="button" class="flex gap-4" (click)="handleNavigation(item.path)">
+                <mat-icon class="icon">{{ item.key }}</mat-icon>
+                <span [ngClass]="[isOpened ? 'show' : 'hide']">{{ item.value }}</span>
+            </button>
+        }
+    </div>
+
+    <div>
+        <button type="button" class="flex gap-4 w-28" (click)="handleLogout()">
+            <mat-icon class="icon">{{ bottomMenuItem.key }}</mat-icon>
+            <span [ngClass]="[isOpened ? 'show' : 'hide']">{{ bottomMenuItem.value }}</span>
+        </button>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="flex flex-col">
+    <label>{{label}}</label>
+    <input [type]="type" [placeholder]="placeholder" (input)="handleInputChange($event)"/>
+
+    <!-- Show errors if any -->
+    @if (_formControl_.errors) {
+        @if (_formControl_.errors['email']) {
+            <small>{{'auth.validEmailError' | translate }}</small>
+        }
+        @if (_formControl_.errors['required']) {
+            <small>{{'auth.requiredFieldError' | translate }}</small>
+        }
+        @if (_formControl_.errors['minlength']) {
+            <small>{{'auth.minlengthError' | translate: { value: _formControl_.errors['minlength'].requiredLength } }}</small>
+        }
+        @if (_formControl_.errors['maxlength']) {
+            <small>{{'auth.maxlengthError' | translate: { value: _formControl_.errors['maxlength'].requiredLength } }}</small>
+        }
+        @if (_formControl_.errors['pattern']) {
+            <small>{{'auth.passwordPatternError' | translate }}</small>
+        }
+    }
+</div>

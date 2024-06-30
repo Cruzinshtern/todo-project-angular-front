@@ -1,0 +1,6 @@
+<div class="flex gap-2">
+    @for (locale of locales; track $index) {
+        <span [class]="'h-6 w-8 hover:cursor-pointer fi fi-' + locale.key" (click)="handleLangChange(locale.value)"></span>
+    }
+</div>
+

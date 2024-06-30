@@ -1,2 +1,6 @@
-<h1 class="text-3xl font-bold underline">{{ 'general.hello' | translate }}</h1>
-<router-outlet></router-outlet>
+<div class="flex">
+    @if (showMenu) {
+        <project-menu></project-menu>
+    }
+    <router-outlet></router-outlet>
+</div>

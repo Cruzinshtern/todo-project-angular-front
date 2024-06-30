@@ -1,0 +1,6 @@
+<h2 mat-dialog-title>{{ title() }}</h2>
+<project-icon class="absolute top-1 right-1 hover:cursor-pointer" [iconName]="'close'" [tooltipText]="'general.close' | translate" (click)="close()"></project-icon>
+<mat-dialog-content> {{ text() }} </mat-dialog-content>
+<mat-dialog-actions>
+  <project-button (click)="confirm()">{{ confirmBtnText() }}</project-button>
+</mat-dialog-actions>

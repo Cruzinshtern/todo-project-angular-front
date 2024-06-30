@@ -1,0 +1,7 @@
+<div class="flex h-full">
+    <div class="flex-1 flex justify-center items-center">{{ 'general.welcome' | translate }}</div>
+    <div class="flex-1 flex flex-col justify-center items-center border w-full">
+        <router-outlet></router-outlet>
+        <project-language-selector class="position: absolute bottom-[20%]"></project-language-selector>
+    </div>
+</div>
