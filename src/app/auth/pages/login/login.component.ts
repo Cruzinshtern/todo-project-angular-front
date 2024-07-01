@@ -6,6 +6,8 @@ import { VALIDATION_REGEX } from '../../../shared/constants/email-validation-reg
 import { Router, RouterLink } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { TranslateModule } from '@ngx-translate/core';
+import { ToastService } from '../../../shared/services/toast.service';
+import { ILoginResponse } from '../../../shared/interfaces/login-response.interface';
 
 @Component({
     selector: 'app-login',
@@ -17,7 +19,7 @@ import { TranslateModule } from '@ngx-translate/core';
 export class LoginComponent implements OnInit {
     form: FormGroup;
 
-    constructor(private _fb: FormBuilder, private _router: Router, private _authService: AuthService) {}
+    constructor(private _fb: FormBuilder, private _router: Router, private _authService: AuthService, private _toastService: ToastService) {}
 
     ngOnInit(): void {
         this.form = this._fb.group({
@@ -28,12 +30,19 @@ export class LoginComponent implements OnInit {
 
     onSubmit() {
         this._authService.login(this.form.value).subscribe({
-            next: (data) => console.log('data', data),
-            error: (err) => console.log('err', err)
+            next: async (data: ILoginResponse) => {
+                this._authService.setAuthToken(data.token);
+                await this._handleRedirect('home');
+            },
+            error: (err) => this._toastService.error(err.error.message)
           });
     }
 
-    async handleNavigation() {
-        await this._router.navigate(['auth/register'])
+    async redirectToRegisterPagePage() {
+        await this._handleRedirect('auth/register');
+    }
+    
+    private async _handleRedirect(path: string) {
+        await this._router.navigate([path]);
     }
 }

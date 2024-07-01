@@ -27,6 +27,9 @@
         "maxlengthError": "Length should not be more then {{value}} characters",
         "passwordPatternError": "Your password should contain upper and lower case letters and at least one special character"
     },
+    "toast": {
+        "register_success": "Your have been registered successfully"
+    },
     "todos": {
         "creationDate": "Creation date",
         "favorite": "Favorite",

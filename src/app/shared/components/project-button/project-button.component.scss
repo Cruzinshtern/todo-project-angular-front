@@ -7,6 +7,11 @@
     margin: 8px;
     font-size: $default-font-size;
 
+    &[disabled] {
+        opacity: 0.3;
+        pointer-events: none;
+    }
+    
     &:hover {
         cursor: pointer;
     }

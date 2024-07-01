@@ -5,7 +5,9 @@ import { ProjectButtonComponent } from '../../../shared/components/project-butto
 import { ProjectInputComponent } from '../../../shared/components/project-input/project-input.component';
 import { Router } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
+import { ToastrService } from 'ngx-toastr';
+import { ToastService } from '../../../shared/services/toast.service';
 
 @Component({
   selector: 'app-register',
@@ -17,7 +19,7 @@ import { TranslateModule } from '@ngx-translate/core';
 export class RegisterComponent implements OnInit {
   form: FormGroup;
 
-  constructor(private _fb: FormBuilder, private _router: Router, private _authService: AuthService) {}
+  constructor(private _fb: FormBuilder, private _router: Router, private _authService: AuthService, private _toastService: ToastService, private _translateService: TranslateService) {}
 
   ngOnInit(): void {
       this.form = this._fb.group({
@@ -30,12 +32,19 @@ export class RegisterComponent implements OnInit {
 
   onSubmit() {
       this._authService.register(this.form.value).subscribe({
-        next: (data) => console.log('data', data),
-        error: (err) => console.log('err', err)
+        next: async () => {
+          this._toastService.success(this._translateService.instant('toast.register_success'));
+          await this._handleRedirect();
+        },
+        error: (err) => this._toastService.error(err.error.message)
       });
   }
 
-  async handleNavigation() {
+  async redirectToLoginPage() {
+    await this._handleRedirect();
+  }
+
+  private async _handleRedirect() {
     await this._router.navigate(['auth/login']);
   }
 }

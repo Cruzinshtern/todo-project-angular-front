@@ -6,12 +6,12 @@
         <project-input [placeholder]="'auth.passwordPlaceholder' | translate" [type]="'password'" [label]="'auth.password' | translate" [_formControl_]="form.controls['password']"></project-input>
     
         <div class="flex justify-center">
-            <project-button type="submit" color="primary">{{ 'auth.login' | translate }}</project-button>
-            <project-button type="button" color="secondary">{{ 'auth.cancel' | translate }}</project-button>
+            <project-button [type]="'submit'" [color]="'primary'" [disabled]="form.invalid">{{ 'auth.register' | translate }}</project-button>
+            <project-button [type]="'button'" [color]="'secondary'">{{ 'auth.cancel' | translate }}</project-button>
         </div>
     </form>
 
-    <div class="text-center">{{ 'auth.haveAccount' | translate }} <a class="hover:cursor-pointer" (click)="handleNavigation()">{{ 'auth.login' | translate }}</a></div>
+    <div class="text-center">{{ 'auth.haveAccount' | translate }} <a class="hover:cursor-pointer underline" (click)="redirectToLoginPage()">{{ 'auth.login' | translate }}</a></div>
 </div>
 
 

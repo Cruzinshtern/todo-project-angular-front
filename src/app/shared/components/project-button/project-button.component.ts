@@ -1,11 +1,12 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'project-button',
   standalone: true,
   imports: [],
   templateUrl: './project-button.component.html',
-  styleUrl: './project-button.component.scss'
+  styleUrl: './project-button.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ProjectButtonComponent {
   @Input() type: 'submit' | 'reset' | 'cancel' | 'button' = 'button';

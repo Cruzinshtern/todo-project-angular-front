@@ -17,33 +17,12 @@ export class AuthService {
 
   constructor(private _http: HttpClient, private _toastService: ToastService, private _router: Router) {}
 
-  login(body: IUserLogin): Observable<ILoginResponse | HttpErrorResponse> {
-    return this._http.post<ILoginResponse>(`${this.basicUrl}/auth/login`, body)
-      .pipe(
-        tap(async (data: ILoginResponse) => {
-          if (data && data.token) {
-            this._setAuthToken(data.token);
-            await this._router.navigate(['home']);
-          }
-        }),
-        catchError(err => {
-          this._toastService.error(err.error.message);
-          return of(err as HttpErrorResponse)
-        })
-      )
+  login(body: IUserLogin): Observable<ILoginResponse> {
+    return this._http.post<ILoginResponse>(`${this.basicUrl}/auth/login`, body);
   }
 
-  register(body: IUserRegister): Observable<IUserRegister | HttpErrorResponse> {
-    return this._http.post<IUserRegister>(`${this.basicUrl}/users/create`, body)
-      .pipe(
-        tap(() => {
-          this._toastService.success('you have been registered');
-        }),
-        catchError(err => {
-          this._toastService.error(err.error.message);
-          return of(err as HttpErrorResponse);
-        })
-      )
+  register(body: IUserRegister): Observable<IUserRegister> {
+    return this._http.post<IUserRegister>(`${this.basicUrl}/users/create`, body);
   }
 
   isLoggedIn(): boolean {
@@ -54,7 +33,7 @@ export class AuthService {
     localStorage.removeItem(environment.project_token);
   }
 
-  private _setAuthToken(token: string): void {
+  setAuthToken(token: string): void {
     localStorage.setItem(environment.project_token, token);
   }
 }
