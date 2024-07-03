@@ -1,4 +1,71 @@
 :host {
     display: block;
     height: 100vh;
+    width: 100vw;
+    overflow-y: scroll;
+}
+
+.first-slide {
+  video {
+    object-fit: fill;
+    opacity: 0.7;
+    z-index: -1;
+  }
+  
+  .ga-maamli-regular {
+    font-family: "Ga Maamli", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .changing-text {
+    animation: animateChangingText 2s linear forwards;
+  }
+}
+
+.second-slide {
+  .img {
+    background-image: url('../../assets/img/workplace-communication.jpg');
+    background-size: cover;
+    -webkit-box-shadow: 0 0 8px 8px white inset;
+    -moz-box-shadow: 0 0 8px 8px white inset;
+    box-shadow: 0 0 8px 8px white inset;
+    opacity: 0.7;
+    animation: slidein 2s ease-in;
+  }
+
+  .advantages {
+    animation: animateChangingText 3s linear forwards;
+
+    ol {
+        list-style: decimal;
+        padding: 0 14px;
+    }
+  }
+}
+
+.third-element {}
+
+.bottom-element {
+  background-color: rgb(178, 144, 210);
+}
+
+@keyframes slidein {
+    0% {
+      transform: translateX(-1500px);
+    }
+  
+    100% {
+      transform: translateX(0);
+    }
+}
+
+// TODO: look better, not perfect
+@keyframes animateChangingText {
+  0% { 
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

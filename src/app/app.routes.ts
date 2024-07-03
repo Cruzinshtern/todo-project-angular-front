@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthGuard } from './shared/guards/auth.guard';
+import { SettingsComponent } from './settings/settings.component';
 
 export const routes: Routes = [
     {
@@ -16,12 +17,18 @@ export const routes: Routes = [
         canActivate: [AuthGuard]  
     },
     { 
-        path: '**',   
-        redirectTo: 'home', 
-        pathMatch: 'full' 
+        path: 'settings', 
+        title: 'Settings', 
+        component: SettingsComponent,
+        canActivate: [AuthGuard]  
     },
     // { 
-    //     path: '**', 
-    //     component: PageNotFoundComponent 
-    // }, 
+    //     path: '**',   
+    //     redirectTo: 'home', 
+    //     pathMatch: 'full' 
+    // },
+    { 
+        path: '**', 
+        component: PageNotFoundComponent 
+    }, 
 ];

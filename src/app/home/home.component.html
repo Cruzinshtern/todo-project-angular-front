@@ -1,4 +1,52 @@
-<div class="flex h-full">
-    <p>home works!</p>
+<div class="first-slide flex flex-col relative mb-1 h-full">
+    <h1 class="absolute ga-maamli-regular text-white text-9xl p-5">Todo Project</h1>
+    <h1 class="absolute bottom-0 ga-maamli-regular text-white text-7xl p-5 changing-text">helps <br> you to <br> Track <span class="changing-text text-blue-600">{{ changingHeader }}</span> </h1>
+    <div class="absolute bottom-0 right-0 p-5 flex flex-col gap-3 items-center">
+        <project-button class="z-10" [type]="'button'" (click)="redirectToTodoForm()">Create todo</project-button>
+        <div class="text-white text-xl">or</div>
+        <div class="flex items-center">
+            <span class="p-4 bg-white">Get to the Todo list</span>
+            <div class="flex justify-center items-center p-4 bg-orange-500">
+                <mat-icon class="icon">chevron_right</mat-icon>
+            </div>
+        </div>
+    </div>
+    <video src="../../assets/video/header-video.mp4" muted loop autoplay class="h-full w-full"></video>
 </div>
 
+<!-- TODO: Improve Home page when pictures to todo are created -->
+
+@defer (on viewport) {
+    <div class="second-slide flex h-[500px] gap-5">
+        <div class="img flex-1"></div>
+        <div class="advantages flex flex-col gap-3 text-xl flex-1 color-black items-center justify-center">
+            <h5>Advantages</h5>
+            <ol>
+                <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
+                <li>Donec ut dolor nec massa imperdiet elementum quis ac sapien.</li>
+                <li>In ac elementum neque.</li>
+                <li>Duis luctus nisl nec libero cursus, a maximus felis posuere.</li>
+                <li>Pellentesque egestas quam ut leo faucibus sollicitudin.</li>
+                <li>Praesent non ante tortor.</li>
+            </ol>
+        </div>
+    </div>
+} @placeholder {
+    <div>Loading...</div>
+}
+
+@defer (on viewport) {
+    <div class="third-element flex justify-center items-center p-10">
+        <div class="h-[500px] w-[300px] border"></div>
+    </div>
+} @placeholder {
+    <div>Loading....</div>
+}
+
+@defer (on viewport) {
+    <div class="bottom-element">
+        <div class="h-[150px] w-full"></div>
+    </div>
+} @placeholder {
+    <div>Loading....</div>
+}
