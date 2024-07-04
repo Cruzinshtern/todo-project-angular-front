@@ -1,11 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
-import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { environment } from '../environments/environment';
-import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 import { LanguageService } from './shared/services/language.service';
-import { ProjectMenuComponent } from './shared/components/project-menu/project-menu.component';
 import { AuthGuard } from './shared/guards/auth.guard';
+import { ProjectMenuComponent } from './shared/components/project-menu/project-menu.component';
 
 @Component({
   selector: 'app-root',

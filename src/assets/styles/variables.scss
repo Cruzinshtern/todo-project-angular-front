@@ -27,3 +27,14 @@ $large-margin: 18px;
 $error-small-font-size: 8px;
 $error-normal-font-size: 16px;
 $error-color: #a71b1b;
+
+// Mixins
+@mixin select-animation {
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+    &:hover {
+        cursor: pointer;
+        transform: scale(1.5);
+    }
+}

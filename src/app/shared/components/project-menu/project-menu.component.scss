@@ -1,37 +1,32 @@
-.menu {
-    height: 100vh;
-    border: 1px solid black;
-    transition: all 1s ease-out;
-    padding: 16px;
+@use '../../../../assets/styles/variables.scss' as *;
 
-    &-opened {
-        width: 200px;
-    }    
-    &-closed {
-        width: 60px;
+:host {
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+}
+
+.logo, .value, .icon {
+    @include select-animation();
+}
+
+@media screen and (max-width: 600px) {
+    .value {
+        display: none;
+    }
+    .icon {
+        display: block;
     }
 }
 
-.show {
-    opacity: 1;
-    transition: opacity 0.5s ease-in;
-    
-    &:hover {
-        text-decoration: underline;
-        cursor: pointer;
+@media screen and (min-width: 600px) {
+    .value {
+        display: block;
     }
-}
-
-.hide {
-    opacity: 0;
-    transition: opacity 0.5s ease-out;
-    pointer-events: none;
-}
-
-.icon {
-    transform: scale(1.5);
-    
-    &:hover {
-        transform: scale(1.7);
+    .icon {
+        display: none;
     }
 }
